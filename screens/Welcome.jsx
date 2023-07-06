@@ -1,57 +1,47 @@
-import React from "react";
-import {Center, Fab, Icon, Image} from "native-base";
-import {StyleSheet} from 'react-native';
-import logo from "../assets/logo.png";
-import {ResizeMode, Video} from 'expo-av';
-import {Feather} from "@expo/vector-icons";
+import React, {useState} from "react";
+import {Box, Button, Center, FormControl, Heading, Input, useToast, VStack} from "native-base";
+import {StatusBar} from "react-native";
 
-export const styles = StyleSheet.create({
-    backgroundVideo: {
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        bottom: 0,
-        right: 0
-    },
-    logo: {
-        width: 120,
-        height: 29,
-        position: 'absolute',
-        right: 16,
-        top: 16,
-    }
-});
 export const WelcomeScreen = ({navigation}) => {
-    const video = React.useRef(null);
+    const toast = useToast();
+    const [name, setName] = useState('');
+    const [club, setClub] = useState('');
 
-    return (
-        <Center
-            _dark={{bg: "blueGray.900"}}
-            _light={{bg: "blueGray.50"}}
-            px={4}
-            flex={1}
-            w={"100%"}
-            h="100%"
-        >
-            <Video
-                ref={video}
-                style={styles.backgroundVideo}
-                source={{
-                    uri: "https://developerb2.com/assets/projects/cricboards/bg_video.mp4",
-                }}
-                resizeMode={ResizeMode.COVER}
-                isLooping
-                shouldPlay={true}
-                isMuted={true}
-            />
+    const onSubmit = (data) => {
+        if (name.length > 0 && club.length > 0) {
+            console.log('submitting with ', {name, club});
+            navigation.replace('Tabs');
+        } else {
+            if (!toast.isActive('error-toast')) {
+                toast.show({
+                    id: 'error-toast',
+                    title: "All fields are required",
+                    placement: "top",
+                    bgColor: "danger.600",
+                })
+            }
+        }
+    };
 
-            <Image resizeMode={"contain"} source={logo} alt="Alternate Text" style={styles.logo}/>
-
-
-            <Fab renderInPortal={false} shadow={2} placement="bottom-right" size="lg" colorScheme="success"
-                 icon={<Icon color="white" as={Feather} name="chevrons-right" size="2xl"/>}
-                 onPress={() => navigation.navigate('Teams')}/>
-        </Center>
-);
+    return <Center safeArea w="100%">
+        <StatusBar barStyle="dark-content"/>
+        <Box maxW='90%' w="100%" marginY={5}>
+            <Heading size="lg" fontWeight="600" color="coolGray.800">Welcome</Heading>
+            <Heading mt="1" color="coolGray.600" fontWeight="medium" size="xs">Sign in to continue!</Heading>
+            <VStack space={3} mt="5">
+                <FormControl>
+                    <FormControl.Label>Name</FormControl.Label>
+                    <Input size="lg" autoFocus placeholder="John Doe" onChangeText={text => setName(text)} name="name"/>
+                </FormControl>
+                <FormControl>
+                    <FormControl.Label>Club</FormControl.Label>
+                    <Input size="lg" placeholder="Gujarat Titans" onChangeText={text => setClub(text)} name="club"/>
+                </FormControl>
+                <Button onPress={onSubmit} mt="2" size="lg" colorScheme="primary">
+                    Proceed
+                </Button>
+            </VStack>
+        </Box>
+    </Center>;
 };
 
