@@ -127,7 +127,7 @@ export const InningScreen = ({navigation}) => {
                             <Button variant="unstyled" colorScheme="coolGray" onPress={onClose} ref={cancelRef}>
                                 Cancel
                             </Button>
-                            <Button colorScheme="primary" onPress={() => navigation.navigate('Bowler')}>
+                            <Button colorScheme="primary" onPress={() => navigation.navigate('Home')}>
                                 Finish
                             </Button>
                         </Button.Group>

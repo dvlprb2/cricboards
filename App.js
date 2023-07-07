@@ -93,7 +93,7 @@ export default function App() {
                                 component={TabScreen}
                                 options={{headerShown: false}}
                             />
-                            <Stack.Group screenOptions={headerOptions}>
+                            <Stack.Group navigationKey="new_match" screenOptions={headerOptions}>
                                 <Stack.Screen
                                     name="Teams"
                                     component={TeamScreen}

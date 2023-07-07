@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
 import {FlatList, SafeAreaView, SectionList, StyleSheet, View,} from 'react-native';
-import {Fab, Heading, HStack, Icon, IconButton, Input, Modal, VStack, Text} from "native-base";
+import {Fab, Heading, HStack, Icon, IconButton, Input, Modal, Text, VStack} from "native-base";
 import {Card} from "../components/Card";
 import {Feather} from "@expo/vector-icons";
 
-const ListItem = ({item}) => {
+const ListItem = () => {
     return <Card/>;
 };
 
-export const HomeScreen = () => {
+export const HomeScreen = ({navigation}) => {
     const initialRef = React.useRef(null);
     const [showModal, setShowModal] = useState(false);
 
@@ -42,6 +42,11 @@ export const HomeScreen = () => {
                      icon={<Icon color="white" as={Feather} name="plus" size="2xl"/>}
                      label={<Text fontWeight={600} fontSize="xl" color="white">New Club</Text>}
                      onPress={() => setShowModal(true)}/>
+
+                <Fab renderInPortal={false} shadow={2} placement="bottom-right" size="lg" colorScheme="primary"
+                     icon={<Icon color="white" as={Feather} name="plus" size="2xl"/>}
+                     label={<Text fontWeight={600} fontSize="xl" color="white">New Match</Text>}
+                     onPress={() => navigation.replace('Teams')}/>
             </SafeAreaView>
 
             <Modal isOpen={showModal} onClose={() => setShowModal(false)}
@@ -181,24 +186,3 @@ const styles = StyleSheet.create({
         marginBottom: 5,
     },
 });
-
-
-const modalStyles = {
-    top: {
-        marginBottom: "auto",
-        marginTop: 0
-    },
-    bottom: {
-        marginBottom: 0,
-        marginTop: "auto"
-    },
-    left: {
-        marginLeft: 0,
-        marginRight: "auto"
-    },
-    right: {
-        marginLeft: "auto",
-        marginRight: 0
-    },
-    center: {}
-};
