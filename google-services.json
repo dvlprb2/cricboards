@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "568762015069",
+    "firebase_url": "https://cricboards-47-default-rtdb.firebaseio.com",
+    "project_id": "cricboards-47",
+    "storage_bucket": "cricboards-47.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:568762015069:android:8f8839145f852008609cb4",
+        "android_client_info": {
+          "package_name": "com.developerb2.cricboards"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "568762015069-2hbs1ooamo67kd61al4n5pscr5c78iuf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4fBEaskbJ6fbtcmlwFphrIAHYvrJLYwY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "568762015069-2hbs1ooamo67kd61al4n5pscr5c78iuf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

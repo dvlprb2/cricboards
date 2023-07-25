@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>568762015069-amrvjqt86hajab3dh4ja7i8vu6lcqjst.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.568762015069-amrvjqt86hajab3dh4ja7i8vu6lcqjst</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB4Tybx0tqrTa3HZTfI3Ob8xzFtcLkIC8M</string>
+	<key>GCM_SENDER_ID</key>
+	<string>568762015069</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.developerb2.cricboards</string>
+	<key>PROJECT_ID</key>
+	<string>cricboards-47</string>
+	<key>STORAGE_BUCKET</key>
+	<string>cricboards-47.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:568762015069:ios:9aa41f4176c5684c609cb4</string>
+	<key>DATABASE_URL</key>
+	<string>https://cricboards-47-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>
